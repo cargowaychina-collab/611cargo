@@ -1,0 +1,153 @@
+{
+  "name": "611-cargo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "611 Cargo - Доставка грузов из Китая от 5 кг",
+  "keywords": ["cargo", "china", "delivery", "shipping", "logistics"],
+  "homepage": "https://611cargo.ru",
+  "author": "611 Cargo <cargo-611@yandex.ru>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/611cargo/website"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build && next export",
+    "deploy": "npm run build && npm run export",
+    "clean": "rm -rf .next out",
+    "type-check": "tsc --noEmit",
+    "analyze": "cross-env ANALYZE=true next build",
+    "sitemap": "next-sitemap",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "next": "14.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "mysql2": "^3.6.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.7",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "compression": "^1.7.4",
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.1",
+    "dayjs": "^1.11.10",
+    "lodash": "^4.17.21",
+    "axios": "^1.6.2",
+    "recharts": "^2.8.0",
+    "jspdf": "^2.5.1",
+    "html2canvas": "^1.4.1",
+    "qrcode": "^1.5.3",
+    "sharp": "^0.32.6",
+    "express-validator": "^7.0.1",
+    "winston": "^3.11.0",
+    "node-cron": "^3.0.3",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "ioredis": "^5.3.2",
+    "bull": "^4.12.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "express-session": "^1.17.3",
+    "connect-redis": "^7.1.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "xss": "^1.0.14",
+    "validator": "^13.11.0",
+    "cookie-parser": "^1.4.6",
+    "morgan": "^1.10.0",
+    "swagger-ui-express": "^5.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "pm2": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.9.0",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/nodemailer": "^6.4.14",
+    "@types/multer": "^1.4.11",
+    "@types/cors": "^2.8.17",
+    "@types/compression": "^1.7.5",
+    "@types/uuid": "^9.0.7",
+    "@types/lodash": "^4.14.202",
+    "@types/qrcode": "^1.5.5",
+    "@types/validator": "^13.11.7",
+    "@types/cookie-parser": "^1.4.6",
+    "@types/morgan": "^1.9.9",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "typescript": "5.2.2",
+    "eslint": "8.53.0",
+    "eslint-config-next": "14.0.3",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.1.0",
+    "autoprefixer": "10.4.16",
+    "postcss": "8.4.31",
+    "tailwindcss": "3.3.5",
+    "cross-env": "^7.0.3",
+    "next-sitemap": "^4.2.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@storybook/addon-essentials": "^7.6.3",
+    "@storybook/addon-interactions": "^7.6.3",
+    "@storybook/addon-links": "^7.6.3",
+    "@storybook/blocks": "^7.6.3",
+    "@storybook/nextjs": "^7.6.3",
+    "@storybook/react": "^7.6.3",
+    "@storybook/testing-library": "^0.2.2",
+    "storybook": "^7.6.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ],
+    "moduleNameMapping": {
+      "^@/(.*)$": "<rootDir>/$1"
+    }
+  },
+  "next-sitemap": {
+    "siteUrl": "https://611cargo.ru",
+    "generateRobotsTxt": true,
+    "priority": 0.7,
+    "changefreq": "weekly",
+    "exclude": [
+      "/admin/*",
+      "/client-panel/*",
+      "/api/*"
+    ]
+  }
+}
